@@ -32,7 +32,7 @@ import pandas as pd
 # df3.drop('IATA_CODE_x', axis=1, inplace=True)
 # df3.drop('IATA_CODE_y', axis=1, inplace=True)
 
-#----------Staatennamen für Mapbox einfügen
+#----------Staatennamen für Mapbox einfügen wegen der jason Datei
 #df_staaten_namen = pd.read_csv("FinaleAbgabe/res/staates.csv", sep=",")
 
 #df = pd.merge(df3, df_staaten_namen[['Postal', 'State']], left_on='STATE', right_on='Postal', how='left')
