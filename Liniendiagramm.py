@@ -57,4 +57,4 @@ fig.update_layout(  title="Anzahl der Flüge pro Tag der zehn größten Flughäf
                     plot_bgcolor = "white"
                     )
 
-fig.show()
+#fig.show()

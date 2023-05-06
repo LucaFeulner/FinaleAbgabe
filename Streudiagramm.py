@@ -55,4 +55,4 @@ layout = go.Layout(
 
 fig = go.Figure(data = daten,layout=layout)
 
-fig.show()
+#fig.show()

@@ -128,4 +128,4 @@ fig.update_layout(
                                 bargroupgap=0.05 # Lücke zwischen Balken derselben Standortkoordinate.
 )
 
-fig.show()
+#fig.show()
