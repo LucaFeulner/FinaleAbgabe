@@ -23,9 +23,9 @@ groeße= df.groupby("AIRPORT")["FLIGHT_NUMBER"].count().reset_index(name="fluege
 df_20 = df[df["AIRPORT"].isin(flughafen_top20)]
 anzahl_fluege_flughafen_top20 = df_20.groupby("AIRPORT")["FLIGHT_NUMBER"].count().reset_index()
 #----------Koordinaten einmal pro Flughafen einfügen für x und y auf der Map
-standort_flughfanen = pd.merge(groeße, (df_20[["AIRPORT", "ORIGIN_AIRPORT_LAT", "ORIGIN_AIRPORT_LON"]]), left_on="AIRPORT", right_on="AIRPORT", how= "right").drop_duplicates()
-
-
+standort_flughfanen = pd.merge(groeße, (df_20[["AIRPORT", "ORIGIN_AIRPORT_LAT", "ORIGIN_AIRPORT_LON"]]), left_on="AIRPORT", right_on="AIRPORT", how= "right")
+standort_flughfanen = standort_flughfanen
+print(standort_flughfanen)
 #---------- Die JASON Datei wurde von GIT geladen 
 url_staaten = "https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json"
 token = 'pk.eyJ1IjoibHVjYWYyMDAyIiwiYSI6ImNsZm1sdmg2bTBkMG8zeG5wbmNkMmRmeXcifQ.6tnXcyV6b870rKIE023_pw'
@@ -118,7 +118,7 @@ fig.update_layout(
                 dict(label = "Staaten farbig",
                      method = "update",
                      args = [{"visible": [True, False, True]},
-                             {"title": "Anzahl der Flüge nach Staaten(farbig) und Flughäfen"}
+                             {"title": "Anzahl der Flüge nach Staaten(farbig) und den Top 20 Flughäfen"}
                              ]
                     
                         ),
@@ -127,7 +127,7 @@ fig.update_layout(
                 dict(label = "Staaten ohne Farbe",
                      method = "update",
                      args = [{"visible": [False, True, True]},
-                             {"title": "Anzahl der Flüge nach Staaten(SW) und Flughäfen"}
+                             {"title": "Anzahl der Flüge nach Staaten(SW) und den Top 20 Flughäfen"}
                              ],
                        )
                     
