@@ -25,7 +25,7 @@ anzahl_fluege_flughafen_top20 = df_20.groupby("AIRPORT")["FLIGHT_NUMBER"].count(
 #----------Koordinaten einmal pro Flughafen einfügen für x und y auf der Map
 standort_flughfanen = pd.merge(groeße, (df_20[["AIRPORT", "ORIGIN_AIRPORT_LAT", "ORIGIN_AIRPORT_LON"]]), left_on="AIRPORT", right_on="AIRPORT", how= "right")
 standort_flughfanen = standort_flughfanen
-print(standort_flughfanen)
+
 #---------- Die JASON Datei wurde von GIT geladen 
 url_staaten = "https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json"
 token = 'pk.eyJ1IjoibHVjYWYyMDAyIiwiYSI6ImNsZm1sdmg2bTBkMG8zeG5wbmNkMmRmeXcifQ.6tnXcyV6b870rKIE023_pw'

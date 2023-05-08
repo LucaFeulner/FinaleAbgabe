@@ -8,6 +8,7 @@ import Balkendiagramm
 import Liniendiagramm
 import Streudiagramm
 import Mapbox
+import Mapbox01
 
 
 app = dash.Dash()
@@ -31,6 +32,10 @@ app.layout = html.Div([
     dcc.Graph(
         id= "Balkendiagramm",
         figure= Balkendiagramm.fig
+            ),
+    dcc.Graph(
+        id= "Mapbox01",
+        figure= Mapbox01.fig
             ),
     dcc.Graph(
         id= "Mapbox",

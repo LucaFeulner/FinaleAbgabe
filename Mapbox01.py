@@ -50,18 +50,15 @@ staaten_weiß = go.Choroplethmapbox(
                     visible=False,
                     colorscale= [[0, '#ffffff'], [0.5, '#ffffff'], [1.0, 'rgb(255, 255, 255)']],
                     showscale = True
-                    
-
-                    
-    )
+                     )
 
 route = flugroute_top10
-print(route)
-for i in range(10):
-    test = route.iloc[i]
-    lat = test["DESTINATION_AIRPORT_LAT"]
-    long = test["DESTINATION_AIRPORT_LON"]
-    print("LAT:" + str(lat) + " LONG:" + str(long))
+# print(route)
+# for i in range(10):
+#     test = route.iloc[i]
+#     lat = test["DESTINATION_AIRPORT_LAT"]
+#     long = test["DESTINATION_AIRPORT_LON"]
+#     print("LAT:" + str(lat) + " LONG:" + str(long))
     
 for i in range(10):
     test = route.iloc[i]
@@ -69,7 +66,8 @@ for i in range(10):
         mode = "markers+lines",
         lat = [test["ORIGIN_AIRPORT_LAT"], test["DESTINATION_AIRPORT_LAT"]],
         lon = [test["ORIGIN_AIRPORT_LON"], test["DESTINATION_AIRPORT_LON"]],
-        marker = {"size": 10}
+        marker = {"size": 10},
+        name = (test["ORIGIN_AIRPORT"] + "-->" + test["DESTINATION_AIRPORT"])
 
 
     ))
@@ -102,4 +100,4 @@ fig.update_layout(
 fig.update_layout(margin={"r": 70, "t": 70, "l": 70, "b": 70})
 
 
-fig.show()
+#fig.show()
