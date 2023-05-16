@@ -44,7 +44,7 @@ for fluggesellschaft in anzahl_fluege_fluggesellschaften["AIRLINE"].unique():
                 )
     farben_zaehler = farben_zaehler +  1
 
-fig.update_layout(  title="Anzahl der Flüge pro Tag der zehn größten Flughäfen im Januar 2015",
+fig.update_layout(  title="Anzahl der Flüge pro Tag der zehn größten Fluggesellschaften im Januar 2015",
                     xaxis = dict(
                                 tickvals = anzahl_fluege_fluggesellschaften['DATUM'].unique(),
                                 gridcolor = "lightgray",

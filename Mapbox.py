@@ -97,7 +97,7 @@ fig.add_trace(staaten_weiß)
 fig.add_trace(flughafen)
 
 fig.update_layout(
-                    title = "Anzahl der Flüge nach Staaten(farbig) und Flughäfen",
+                    title = "Anzahl der Flüge nach Staaten(farbig) und top 20Flughäfen",
                     xaxis = dict(
                                 title = "Tag"
                                 ),
@@ -147,4 +147,4 @@ fig.update_layout(
 fig.update_layout(margin={"r": 70, "t": 70, "l": 70, "b": 70})
 
 
-#fig.show()
+fig.show()

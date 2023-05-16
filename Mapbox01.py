@@ -23,14 +23,14 @@ for feature in geo_data['features']:
 
 
 df = pd.read_csv("FinaleAbgabe/res/FinalesDatenset.csv")
-flughafen_top10 = df.groupby("AIRPORT")["FLIGHT_NUMBER"].count()
-flughafen_top10 = flughafen_top10.nlargest(10).index
-df_top10 = df[df["AIRPORT"].isin(flughafen_top10)]
-standort_flughafen = df_top10.drop_duplicates(subset="AIRPORT", keep="first", inplace=False, ignore_index=False)
-standort_flughafen = df_top10[["AIRPORT", "ORIGIN_AIRPORT_LAT", "ORIGIN_AIRPORT_LON"]]
+flughafen_top15 = df.groupby("AIRPORT")["FLIGHT_NUMBER"].count()
+flughafen_top15 = flughafen_top15.nlargest(15).index
+df_top15 = df[df["AIRPORT"].isin(flughafen_top15)]
+standort_flughafen = df_top15.drop_duplicates(subset="AIRPORT", keep="first", inplace=False, ignore_index=False)
+standort_flughafen = df_top15[["AIRPORT", "ORIGIN_AIRPORT_LAT", "ORIGIN_AIRPORT_LON"]]
 
 flugroute = df.groupby(["ORIGIN_AIRPORT", "DESTINATION_AIRPORT", "ORIGIN_AIRPORT_LAT", "ORIGIN_AIRPORT_LON", "DESTINATION_AIRPORT_LAT", "DESTINATION_AIRPORT_LON"])["FLIGHT_NUMBER"].count().reset_index(name="Flugroute").drop_duplicates(subset=["Flugroute"])
-flugroute_top10 = flugroute.nlargest(10, "Flugroute")
+flugroute_top10 = flugroute.nlargest(15, "Flugroute")
 
 
 
@@ -60,7 +60,7 @@ route = flugroute_top10
 #     long = test["DESTINATION_AIRPORT_LON"]
 #     print("LAT:" + str(lat) + " LONG:" + str(long))
     
-for i in range(10):
+for i in range(15):
     test = route.iloc[i]
     fig.add_trace(go.Scattermapbox(
         mode = "markers+lines",
@@ -85,7 +85,7 @@ fig.add_trace(staaten_weiß)
 
 
 fig.update_layout(
-                    title = "Top 20 Flugrouten",
+                    title = "Top 15 Flugrouten",
                     xaxis = dict(
                                 title = "Tag"
                                 ),
@@ -100,4 +100,4 @@ fig.update_layout(
 fig.update_layout(margin={"r": 70, "t": 70, "l": 70, "b": 70})
 
 
-#fig.show()
+fig.show()

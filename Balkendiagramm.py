@@ -57,7 +57,7 @@ balken3 = go.Bar(
 
 # Style für das Balkendiagramm
 layout = go.Layout(
-    title = "Aufgeholte Zeit in der Luft",
+    title = "Aufgeholte Zeit",
     xaxis_tickfont_size=14,
     xaxis_title = "Fluggesellschaften",
     yaxis=dict(
@@ -111,7 +111,7 @@ fig.update_layout(
         ])
              )
     ],
-    title = "Durchschnittliche aufgeholte Zeit in der Luft pro Fluggesellschaft",
+    title = "Durchschnittliche aufgeholte Zeit pro Fluggesellschaft",
                             xaxis_tickfont_size=14,
                             xaxis_title = "Fluggesellschaften",
                             yaxis=dict(
