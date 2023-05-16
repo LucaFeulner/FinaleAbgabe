@@ -21,25 +21,32 @@ app = dash.Dash()
 
 
 app.layout = html.Div([
+    html.H1("Visualisierungen des Datensets"),
     dcc.Graph(
         id= "Liniendiagramm",
-        figure= Liniendiagramm.fig
+        figure= Liniendiagramm.fig,
+        style={'width': '100%', 'height': '600px'}
             ),
+        
     dcc.Graph(
         id= "Streudiagramm",
-        figure= Streudiagramm.fig
+        figure= Streudiagramm.fig,
+        style={'width': '100%', 'height': '600px'}
             ),
     dcc.Graph(
         id= "Balkendiagramm",
-        figure= Balkendiagramm.fig
+        figure= Balkendiagramm.fig,
+        style={'width': '100%', 'height': '600px'}
             ),
     dcc.Graph(
         id= "Mapbox01",
-        figure= Mapbox01.fig
+        figure= Mapbox01.fig,
+        style={'width': '100%', 'height': '600px'}
             ),
     dcc.Graph(
         id= "Mapbox",
-        figure= Mapbox.fig
+        figure= Mapbox.fig,
+        style={'width': '100%', 'height': '700px'}
             )
 ])
        
